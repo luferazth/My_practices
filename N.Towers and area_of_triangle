@@ -1,0 +1,453 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled12.ipynb",
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyNYo45kV5QYLCcu3mJtnfFI",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/luferazth/My_practices/blob/main/N.Towers%20and%20area_of_triangle\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "e3wfdo2o0j98"
+      },
+      "outputs": [],
+      "source": [
+        "976. Largest Perimeter Triangle\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import itertools\n",
+        "List = []"
+      ],
+      "metadata": {
+        "id": "r0uWYGd93RKK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Solution:\n",
+        "    def largestPerimeter(self, nums:list) -> int:\n",
+        "        nums2 = sorted(nums, reverse = True)\n",
+        "        combinacion_1 = list(itertools.combinations(nums2,3))\n",
+        "        lista_final = []\n",
+        "        for tupla in combinacion_1:\n",
+        "          if area_of_triangle(tupla) > 0:\n",
+        "            lista_final.append(tupla)\n",
+        "        return lista_final    "
+      ],
+      "metadata": {
+        "id": "VyfF5ImQ0mR6"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = [3,6,2,3]\n",
+        "b = sorted(a, reverse = True)\n"
+      ],
+      "metadata": {
+        "id": "RRWxcm7L0sS1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "def area_of_triangle(tupla):\n",
+        "  a,b,c = tupla\n",
+        "  s = (a+b+c)/2\n",
+        "  if (s>0) and (s-a)>0 and (s-b)>0 and (s-c)>0:\n",
+        "    return math.sqrt(s*(s - a)*(s - b)*(s - c))  \n",
+        "  else:\n",
+        "    return 0"
+      ],
+      "metadata": {
+        "id": "eI4Zv98fJRyK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Solution:\n",
+        "    def largestPerimeter(self, nums:list) -> int:\n",
+        "        nums2 = sorted(nums, reverse = True)\n",
+        "        combinacion_1 = list(itertools.combinations(nums2,3))\n",
+        "        lista_final = []\n",
+        "        for tupla in combinacion_1:\n",
+        "          if area_of_triangle(tupla) > 0:\n",
+        "            lista_final.append(tupla)\n",
+        "        \n",
+        "        return sum(lista_final[0])    "
+      ],
+      "metadata": {
+        "id": "P_I6SjuzLkuD"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "largo = Solution()"
+      ],
+      "metadata": {
+        "id": "mjqcCYPMLoIv"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lista_final"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o5ZB6FuKMdrw",
+        "outputId": "ede70958-220c-48d1-a6f2-22381805ccb9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[(6, 5, 4), (6, 5, 3), (6, 5, 2), (6, 4, 3), (5, 4, 3), (5, 4, 2), (4, 3, 2)]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 103
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "largo.largestPerimeter([3,6,2,3])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pm9IJQqpLrvn",
+        "outputId": "d8112f26-4ac7-4e1b-e5aa-9e650fb8ce1b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "8"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 105
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "combinacion_1 = list(itertools.combinations(b,3))"
+      ],
+      "metadata": {
+        "id": "fyiaU9xi3cSE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "combinacion_1\n",
+        "lista_final = []\n",
+        "for tupla in combinacion_1:\n",
+        "  x,y,z = tupla\n",
+        "  if (x < y+z) and (y < x+z) and (z <x+y): \n",
+        "    lista_final.append(tupla)\n",
+        "sum(lista_final[0])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AgxF06cR5zKS",
+        "outputId": "5dcc4d38-880f-44a6-b4b6-7d5e8b0450d2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "15"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 29
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def solution(T):\n",
+        "  counter = 0\n",
+        "  \n",
+        "  return max"
+      ],
+      "metadata": {
+        "id": "wKzsZBVZ5z92"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "T = [\"aab\", \"cab\", \"baa\", \"baa\"]\n",
+        "string = \"aab\"\n"
+      ],
+      "metadata": {
+        "id": "slMeFQCJbD1C"
+      },
+      "execution_count": 41,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lista_ = []\n",
+        "for strings in T:\n",
+        "  lista_.append(list(strings))"
+      ],
+      "metadata": {
+        "id": "8Ay9iyDV39tx"
+      },
+      "execution_count": 42,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lista_"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CDH3KG2B4FLc",
+        "outputId": "5ccf71ba-521c-4907-d08f-afd547d83b30"
+      },
+      "execution_count": 43,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[['a', 'a', 'b'], ['c', 'a', 'b'], ['b', 'a', 'a'], ['b', 'a', 'a']]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 43
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def swap_string(item):\n",
+        "  x,y,z = list(item)\n",
+        "  lista_de_swap =[]\n",
+        "  lista_de_swap.append(list(item)) \n",
+        "  lista_de_swap.append(list(x+z+y))\n",
+        "  lista_de_swap.append(list(y+x+z))\n",
+        "  return lista_de_swap\n"
+      ],
+      "metadata": {
+        "id": "an7NFNtKbJJV"
+      },
+      "execution_count": 55,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "swap_string(\"zzz\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DIKmcEqdK57t",
+        "outputId": "4144df7c-be5d-42bc-91bc-d60fada3d234"
+      },
+      "execution_count": 54,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[['z', 'z', 'z'], ['z', 'z', 'z'], ['z', 'z', 'z']]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 54
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "ynChU9z-K2uA"
+      },
+      "execution_count": 28,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Solution(T):\n",
+        "  lista_cuasi_semi_final = []\n",
+        "  lista_semi_final = []\n",
+        "  for item in T:\n",
+        "    lista_semi_final.append(swap_string(item))\n",
+        "  lista_final = []\n",
+        "  for listas in lista_semi_final:\n",
+        "    for lista in listas:\n",
+        "      lista_final.append(lista)\n",
+        "  for elemento in lista_:\n",
+        "    lista_final.remove(elemento)\n",
+        "  for elemento in lista_final:\n",
+        "    d = lista_final.count(elemento)\n",
+        "    lista_cuasi_semi_final.append(d)\n",
+        "\n",
+        "  return max(lista_cuasi_semi_final)"
+      ],
+      "metadata": {
+        "id": "JijVOldDzORa"
+      },
+      "execution_count": 56,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "OfIV1A8mziHD",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "7c86dc08-4c7e-4d7d-8f66-f57c0f56e54c"
+      },
+      "execution_count": 46,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 46
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "T\n",
+        "T2 = [\"zzz\", \"zbz\", \"zbz\", \"dgf\"]"
+      ],
+      "metadata": {
+        "id": "I09YZk0INd56"
+      },
+      "execution_count": 37,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Solution(T2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 301
+        },
+        "id": "Zbaj6z6aNea5",
+        "outputId": "302e3e65-f9af-4b41-ccab-214754016628"
+      },
+      "execution_count": 57,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ValueError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-57-e362338e76cc>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mSolution\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mT2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-56-b8fa54c364b7>\u001b[0m in \u001b[0;36mSolution\u001b[0;34m(T)\u001b[0m\n\u001b[1;32m      9\u001b[0m       \u001b[0mlista_final\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mappend\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mlista\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     10\u001b[0m   \u001b[0;32mfor\u001b[0m \u001b[0melemento\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mlista_\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 11\u001b[0;31m     \u001b[0mlista_final\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mremove\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0melemento\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     12\u001b[0m   \u001b[0;32mfor\u001b[0m \u001b[0melemento\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mlista_final\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     13\u001b[0m     \u001b[0md\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mlista_final\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcount\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0melemento\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: list.remove(x): x not in list"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "ek15JhwwNvhO"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
